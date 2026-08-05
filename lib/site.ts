@@ -280,8 +280,8 @@ export const investorAwareness = [
 /* Investor complaint data                                              */
 /* ------------------------------------------------------------------ */
 export const investorComplaintData = {
-  period: "December 2024",
-  href: "https://assets.zyrosite.com/mxBME7QjQ6So46Po/investor-complaint-data-genuine-stock_broker-december-2024-mePbOwLZ4KtXBqMR.pdf",
+  period: "July 2026",
+  href: "/docs/investor-complaint-data-july-2026.pdf",
 };
 
 /* ------------------------------------------------------------------ */
