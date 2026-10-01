@@ -280,8 +280,8 @@ export const investorAwareness = [
 /* Investor complaint data                                              */
 /* ------------------------------------------------------------------ */
 export const investorComplaintData = {
-  period: "July 2026",
-  href: "/docs/investor-complaint-data-july-2026.pdf",
+  period: "September 2026",
+  href: "/docs/investor-complaint-data-september-2026.pdf",
 };
 
 /* ------------------------------------------------------------------ */
