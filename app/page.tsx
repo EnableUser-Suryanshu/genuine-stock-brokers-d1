@@ -18,6 +18,8 @@ import {
   clientCollateral,
   riskDisclosures,
   riskDisclosureSource,
+  branchOffice,
+  memberships,
 } from "@/lib/site";
 
 export default function HomePage() {
@@ -40,6 +42,7 @@ export default function HomePage() {
       <RiskDisclosures />
       <ClientCollaterals />
       <CtaBanner />
+      <OfficeDetails />
     </>
   );
 }
@@ -1093,6 +1096,116 @@ function ClientCollaterals() {
             </a>
           </div>
         </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Office Details — registered office, branch office, memberships      */
+/* ------------------------------------------------------------------ */
+function OfficeDetails() {
+  return (
+    <section
+      id="office-details"
+      className="scroll-mt-28 py-24"
+      aria-labelledby="office-details-heading"
+    >
+      <div className="container-page">
+        <SectionHeading
+          id="office-details-heading"
+          eyebrow="Our Offices"
+          title="Office & Registration Details"
+        />
+
+        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {/* Registered Office */}
+          <Reveal>
+            <div className="h-full rounded-3xl border border-mint-200 bg-white p-7 shadow-card">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-forest">
+                Registered Office
+              </h3>
+              <address className="mt-4 space-y-1 text-sm not-italic leading-relaxed text-slate-700">
+                <span className="block font-semibold text-forest">
+                  {company.legalName}
+                </span>
+                <span className="block">B-601, Gopal Palace, Near Shiromani Tower,</span>
+                <span className="block">Nehru Nagar, Ahmedabad - 380015</span>
+                <span className="block pt-2">
+                  Ph. No.:{" "}
+                  <a
+                    href="tel:+917940308992"
+                    className="font-medium text-brand-700 underline underline-offset-2 hover:text-brand-600"
+                  >
+                    +91-79-40308992
+                  </a>
+                </span>
+                <span className="block">
+                  Email:{" "}
+                  <a
+                    href="mailto:Genuine1996@gmail.com"
+                    className="font-medium text-brand-700 underline underline-offset-2 hover:text-brand-600"
+                  >
+                    Genuine1996@gmail.com
+                  </a>
+                </span>
+                <span className="block">
+                  CIN No.: <strong className="text-forest">{company.cin}</strong>
+                </span>
+              </address>
+            </div>
+          </Reveal>
+
+          {/* Branch Office */}
+          <Reveal delay={80}>
+            <div className="h-full rounded-3xl border border-mint-200 bg-white p-7 shadow-card">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-forest">
+                Branch Office
+              </h3>
+              <address className="mt-4 space-y-1 text-sm not-italic leading-relaxed text-slate-700">
+                {branchOffice.lines.map((line) => (
+                  <span key={line} className="block">
+                    {line}
+                  </span>
+                ))}
+              </address>
+              <a
+                href={branchOffice.mapHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 underline underline-offset-2 hover:text-brand-600"
+              >
+                View on Google Maps
+                <span className="sr-only">, branch office location</span>
+                <ExternalHint />
+              </a>
+            </div>
+          </Reveal>
+
+          {/* Exchange memberships */}
+          <Reveal delay={160}>
+            <div className="h-full rounded-3xl border border-mint-200 bg-white p-7 shadow-card md:col-span-2 lg:col-span-1">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-forest">
+                Exchange Memberships
+              </h3>
+              <dl className="mt-4 space-y-5 text-sm leading-relaxed text-slate-700">
+                {memberships.map((m) => (
+                  <div key={m.exchange}>
+                    <dt className="sr-only">{m.exchange}</dt>
+                    <dd>
+                      {m.exchange.replace(" Member", "")} Member Code:{" "}
+                      <strong className="text-forest">{m.code}</strong>
+                    </dd>
+                    <dd>
+                      SEBI Registration No.:{" "}
+                      <strong className="text-forest">{m.sebi}</strong>
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </Reveal>
+        </div>
       </div>
     </section>
   );

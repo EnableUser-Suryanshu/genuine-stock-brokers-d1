@@ -29,6 +29,18 @@ export const company = {
   loginUrl: "/login1",
 };
 
+// Branch office (Mumbai)
+export const branchOffice = {
+  lines: [
+    "611, Corporate Annexe, Next to Udhyog Bhawan,",
+    "Sonawala Road, Goregaon East,",
+    "Mumbai - 400063",
+  ],
+  full: "611, Corporate Annexe, Next to Udhyog Bhawan, Sonawala Road, Goregaon East, Mumbai - 400063",
+  mapHref:
+    "https://www.google.com/maps/search/Sonawala+Road,+Goregaon+East+Mumbai+-400063",
+};
+
 // Direct contact numbers for Genuine Stock Brokers Private Limited.
 // (M) = mobile, (O) = office landline.
 export const contactNumbers = [

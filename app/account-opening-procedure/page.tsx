@@ -48,7 +48,7 @@ export default function AccountOpeningPage() {
     <>
       <PageHero
         eyebrow="Account Opening Procedure"
-        title="Open your trading & demat account."
+        title="Open your Trading Account."
         description="A simple, transparent procedure to start trading with Genuine Stock Brokers. Follow the steps below and keep your documents ready."
         crumbs={[{ label: "Account Opening" }]}
       />

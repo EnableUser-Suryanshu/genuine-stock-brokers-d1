@@ -12,6 +12,7 @@ import {
   complaintAuthorities,
   smartOdr,
   scoresSteps,
+  branchOffice,
 } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -20,10 +21,30 @@ export const metadata: Metadata = {
     "Contact Genuine Stock Brokers Pvt. Ltd. — registered & corporate office in Ahmedabad, compliance officer details, investor grievance escalation matrix, KMP details, SCORES and Smart ODR.",
 };
 
-const details = [
+type Detail = {
+  label: string;
+  value: string;
+  href?: string;
+  external?: boolean;
+  icon: React.ReactNode;
+};
+
+const details: Detail[] = [
   {
     label: "Registered & Corporate Office",
     value: company.address.full,
+    icon: (
+      <>
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+        <circle cx="12" cy="10" r="3" />
+      </>
+    ),
+  },
+  {
+    label: "Branch Office",
+    value: branchOffice.full,
+    href: branchOffice.mapHref,
+    external: true,
     icon: (
       <>
         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
@@ -106,8 +127,17 @@ export default function ContactPage() {
                         {d.label}
                       </p>
                       {d.href ? (
-                        <a href={d.href} className="mt-1 block font-medium text-forest hover:text-brand-700">
+                        <a
+                          href={d.href}
+                          {...(d.external
+                            ? { target: "_blank", rel: "noopener noreferrer" }
+                            : {})}
+                          className="mt-1 block font-medium text-forest hover:text-brand-700"
+                        >
                           {d.value}
+                          {d.external && (
+                            <span className="sr-only"> (opens Google Maps in a new tab)</span>
+                          )}
                         </a>
                       ) : (
                         <p className="mt-1 font-medium text-forest">{d.value}</p>
