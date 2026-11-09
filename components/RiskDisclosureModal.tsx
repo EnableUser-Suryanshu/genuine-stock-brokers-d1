@@ -5,6 +5,10 @@ import { riskDisclosures, riskDisclosureSource } from "@/lib/site";
 
 const STORAGE_KEY = "gsb-risk-disclosure-seen";
 
+/** Shared with SebiAwarenessModal so it opens only after this one closes. */
+export const RISK_DISCLOSURE_STORAGE_KEY = STORAGE_KEY;
+export const RISK_DISCLOSURE_CLOSED_EVENT = "gsb:risk-disclosure-closed";
+
 /**
  * SEBI-mandated "Risk Disclosures on Derivatives" notice.
  * Shown once per browser session on the home page, as an accessible dialog:
@@ -42,6 +46,7 @@ export default function RiskDisclosureModal() {
     }
     setOpen(false);
     openerRef.current?.focus?.();
+    window.dispatchEvent(new Event(RISK_DISCLOSURE_CLOSED_EVENT));
   }, []);
 
   /* Focus management, focus trap, Escape and scroll lock. */

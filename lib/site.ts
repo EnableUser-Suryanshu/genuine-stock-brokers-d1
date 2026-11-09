@@ -292,8 +292,38 @@ export const investorAwareness = [
 /* Investor complaint data                                              */
 /* ------------------------------------------------------------------ */
 export const investorComplaintData = {
-  period: "September 2026",
-  href: "/docs/investor-complaint-data-september-2026.pdf",
+  period: "October 2026",
+  href: "/docs/investor-complaint-data-october-2026.pdf",
+};
+
+/* ------------------------------------------------------------------ */
+/* SEBI investor-awareness popup ("Samajh se Investing Simple")         */
+/* ------------------------------------------------------------------ */
+export const sebiAwareness = {
+  en: {
+    title: "Samajh se Investing simple",
+    points: [
+      "Understand before you invest",
+      "Choose regulated investment products",
+      "Start early, stay invested",
+      "Beware of investment frauds",
+    ],
+    cta: "Got it",
+    closeLabel: "Close",
+    footer: "Investor Awareness Month initiative by SEBI",
+  },
+  hi: {
+    title: "समझ से निवेश आसान",
+    points: [
+      "निवेश करने से पहले समझें",
+      "विनियमित निवेश उत्पाद चुनें",
+      "जल्दी शुरू करें, निवेशित रहें",
+      "निवेश धोखाधड़ी से सावधान रहें",
+    ],
+    cta: "ठीक है",
+    closeLabel: "बंद करें",
+    footer: "सेबी की निवेशक जागरूकता माह पहल",
+  },
 };
 
 /* ------------------------------------------------------------------ */

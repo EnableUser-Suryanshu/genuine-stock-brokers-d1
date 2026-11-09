@@ -4,6 +4,7 @@ import Reveal from "@/components/Reveal";
 import CtaBanner from "@/components/CtaBanner";
 import InvestorQuotes from "@/components/InvestorQuotes";
 import RiskDisclosureModal from "@/components/RiskDisclosureModal";
+import SebiAwarenessModal from "@/components/SebiAwarenessModal";
 import {
   company,
   stats,
@@ -26,6 +27,7 @@ export default function HomePage() {
   return (
     <>
       <RiskDisclosureModal />
+      <SebiAwarenessModal />
       <Hero />
       <LogoStrip />
       <AboutPreview />
